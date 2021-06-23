@@ -4,9 +4,9 @@ class User < ApplicationRecord
 
   def valid_email(user)
     if email[-4..-1] != ".com"
-      errors.add(:email "must end in .com")
+      errors.add :email, "must end in .com"
     elsif !user.email.include?("@")
-      user.errors.add(:email, "must contain @ symbol.")
+      user.errors.add :email, "must contain @ symbol."
     end
   end
 end
